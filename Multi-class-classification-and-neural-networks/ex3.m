@@ -1,4 +1,4 @@
-================= ONE-vs-ALL MULTI CLASS CLASSIFICATION ====================
+%% ================= ONE-vs-ALL MULTI CLASS CLASSIFICATION ====================
 
 %% Initialization
 clear ; close all; clc
