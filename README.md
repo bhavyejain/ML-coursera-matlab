@@ -10,3 +10,7 @@ The algorithm has been implemented in both, a regularized as well as an unregula
 Multi-class-classification-and-neural-networks folder contains my implementation of one-vs-all method
 of multi class classification. As the second part of the exercise, there a code for the feedforward 
 propagation algorithm for an already trained neural network for handwritten digit recognition.
+
+Neural-network-learning folder contains the calcolation of cost by forward propagation and implementation 
+of backpropagation algorithm to compute the partial derivatives for a neural network. Finally, The 
+gradients are used to optimise the weights for the neural network.
