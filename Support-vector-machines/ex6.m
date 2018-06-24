@@ -1,29 +1,9 @@
-%% Machine Learning Online Class
-%  Exercise 6 | Support Vector Machines
-%
-%  Instructions
-%  ------------
-% 
-%  This file contains code that helps you get started on the
-%  exercise. You will need to complete the following functions:
-%
-%     gaussianKernel.m
-%     dataset3Params.m
-%     processEmail.m
-%     emailFeatures.m
-%
-%  For this exercise, you will not need to change any code in this file,
-%  or any other files other than those mentioned above.
-%
+%% ============ SUPPORT VECTOR MACHINES ===================
 
 %% Initialization
 clear ; close all; clc
 
-%% =============== Part 1: Loading and Visualizing Data ================
-%  We start the exercise by first loading and visualizing the dataset. 
-%  The following code will load the dataset into your environment and plot
-%  the data.
-%
+%% =============== Loading and Visualizing Data ================
 
 fprintf('Loading and Visualizing Data ...\n')
 
@@ -37,16 +17,13 @@ plotData(X, y);
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% ==================== Part 2: Training Linear SVM ====================
-%  The following code will train a linear SVM on the dataset and plot the
-%  decision boundary learned.
-%
+%% ==================== Training Linear SVM ====================
 
 % Load from ex6data1: 
 % You will have X, y in your environment
 load('ex6data1.mat');
 
-fprintf('\nTraining Linear SVM...\n')
+fprintf('\nTraining Linear SVM with C = 1 ...\n')
 
 % You should try to change the C value below and see how the decision
 % boundary varies (e.g., try C = 1000)
@@ -57,11 +34,33 @@ visualizeBoundaryLinear(X, y, model);
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
+fprintf('Training with C = 10 \n');
+C = 10;
+model = svmTrain(X, y, C, @linearKernel, 1e-3, 20);
+visualizeBoundaryLinear(X, y, model);
 
-%% =============== Part 3: Implementing Gaussian Kernel ===============
-%  You will now implement the Gaussian kernel to use
-%  with the SVM. You should complete the code in gaussianKernel.m
-%
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+fprintf('Training with C = 100 \n');
+C = 100;
+model = svmTrain(X, y, C, @linearKernel, 1e-3, 20);
+visualizeBoundaryLinear(X, y, model);
+
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+fprintf('Training with C = 1000 \n');
+C = 1000;
+model = svmTrain(X, y, C, @linearKernel, 1e-3, 20);
+visualizeBoundaryLinear(X, y, model);
+
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+
+%% =============== Implementing Gaussian Kernel ===============
+
 fprintf('\nEvaluating the Gaussian Kernel ...\n')
 
 x1 = [1 2 1]; x2 = [0 4 -1]; sigma = 2;
@@ -73,10 +72,7 @@ fprintf(['Gaussian Kernel between x1 = [1; 2; 1], x2 = [0; 4; -1], sigma = %f :'
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% =============== Part 4: Visualizing Dataset 2 ================
-%  The following code will load the next dataset into your environment and 
-%  plot the data. 
-%
+%% =============== Visualizing Dataset 2 ================
 
 fprintf('Loading and Visualizing Data ...\n')
 
@@ -90,10 +86,8 @@ plotData(X, y);
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% ========== Part 5: Training SVM with RBF Kernel (Dataset 2) ==========
-%  After you have implemented the kernel, we can now use it to train the 
-%  SVM classifier.
-% 
+%% ========== Training SVM with RBF Kernel (Dataset 2) ==========
+
 fprintf('\nTraining SVM with RBF Kernel (this may take 1 to 2 minutes) ...\n');
 
 % Load from ex6data2: 
@@ -112,10 +106,7 @@ visualizeBoundary(X, y, model);
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% =============== Part 6: Visualizing Dataset 3 ================
-%  The following code will load the next dataset into your environment and 
-%  plot the data. 
-%
+%% =============== Visualizing Dataset 3 ================
 
 fprintf('Loading and Visualizing Data ...\n')
 
@@ -129,11 +120,7 @@ plotData(X, y);
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% ========== Part 7: Training SVM with RBF Kernel (Dataset 3) ==========
-
-%  This is a different dataset that you can use to experiment with. Try
-%  different values of C and sigma here.
-% 
+%% ========== Training SVM with RBF Kernel (Dataset 3) ==========
 
 % Load from ex6data3: 
 % You will have X, y in your environment
@@ -148,4 +135,3 @@ visualizeBoundary(X, y, model);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
-
