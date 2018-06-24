@@ -17,3 +17,6 @@ gradients are used to optimise the weights for the neural network.
 
 Bias-and-variance folder (week 6) contains the implementation of regularized linear regression, regularized polynomial 
 regression, and learning curves for the algorithm.
+
+Support-vector-machines (week 7) contains an implementation of SVM's with the linear and gaussian kernels.
+In the second part, I there is an implementation of an e-mail spam classifier using a linear kernal SVM. 
