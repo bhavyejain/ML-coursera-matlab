@@ -19,4 +19,12 @@ Bias-and-variance folder (week 6) contains the implementation of regularized lin
 regression, and learning curves for the algorithm.
 
 Support-vector-machines (week 7) contains an implementation of SVM's with the linear and gaussian kernels.
-In the second part, I there is an implementation of an e-mail spam classifier using a linear kernal SVM. 
+In the second part, I there is an implementation of an e-mail spam classifier using a linear kernal SVM.
+
+K-means-and-pca (Week 8) contains my implemetation of the K-means clustering algorithm and principal
+component analysis. This marked the beginning of unsupervised learning in the course. We used PCA to
+compress and reconstruct an image.
+
+Anomaly-detections-and-recommender-systems (Week 9) concludes the programming assignments of the course.
+Here I used Gaussian Probability distribution for detecting anomalies in a system. In the second part,
+I used collaborative filtering to create a recommender system for movies.
